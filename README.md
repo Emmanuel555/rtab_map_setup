@@ -88,4 +88,4 @@ aligned depth frames
 point cloud  
 ```roslaunch realsense2_camera rs_camera.launch filters:=pointcloud```  
 
-![point cloud2](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![point cloud2](https://github.com/frankienaik/rtab_map_setup/blob/master/pointcloud2.png)
