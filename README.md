@@ -88,4 +88,44 @@ aligned depth frames
 point cloud  
 ```roslaunch realsense2_camera rs_camera.launch filters:=pointcloud```  
 
-![point cloud2](https://github.com/frankienaik/rtab_map_setup/blob/master/pointcloud2.png)
+![point cloud2](https://github.com/frankienaik/rtab_map_setup/blob/master/pointcloud2.png)  
+  
+  
+  
+
+## Slamtec Rplidar_ros  
+The link followed is https://github.com/Slamtec/rplidar_ros  
+
+1) Clone the project into our catkin's workspace src folder  
+```cd shadow_ws/src```  
+```git clone https://github.com/Slamtec/rplidar_ros```  
+
+2) Running catkin_make to build rplidarNode and rpilidarNodeClient 
+```catkin_make``` in ws folder  
+
+3) go into rplidar_ros/scripts and run  
+```./create_udev_rules.sh```  
+check ls -l /dev | grep ttyUSB to see rplidar -> ttyUSB0  
+
+4) run ```roslaunch rplidar_ros view_rplidar_a3.launch```
+
+
+## RTAB-Map  
+The link followed is https://github.com/introlab/rtabmap_ros#rtabmap_ros-  
+
+1) Install ROS distribution  
+```sudo apt-get install ros-kinetic-rtabmao-ros```
+
+Install RTAB-Map standalone libraries (not cloned in catkin workspace, but at root)
+```cd ~```  
+```git clone https://github.com/introlab/rtabmap.git rtabmap```  
+```cd rtabmap/build```  
+```cmake ..```  
+```make```  
+```sudo make install```  
+
+Install RTAB-Map ro-pkg in src folder of Catkin workspace
+```cd ~/catkin_ws```  
+```git clone https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros```  
+```catkin_make -j1```  
+
