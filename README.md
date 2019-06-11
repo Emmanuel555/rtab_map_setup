@@ -105,7 +105,7 @@ The link followed is https://github.com/Slamtec/rplidar_ros
 
 3) go into rplidar_ros/scripts and run  
 ```./create_udev_rules.sh```  
-check ls -l /dev | grep ttyUSB to see rplidar -> ttyUSB0  
+check ```ls -l /dev |grep ttyUSB``` to see rplidar -> ttyUSB0  
 
 4) run ```roslaunch rplidar_ros view_rplidar_a3.launch```
 
